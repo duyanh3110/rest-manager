@@ -1,1 +1,70 @@
+.login-form {
+  text-align: center;
+  height: 100vh;
+  background-image: url(/public/images/login-back.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
+.logo {
+  padding-top: 140px;
+  padding-bottom: 110px;
+}
+
+.logo img {
+  width: 30%;
+}
+
+.input-login {
+  width: 333px;
+  height: 44px;
+  border: 0px;
+  border-radius: 20px;
+  padding-left: 22px;
+  background-color: rgba(255, 255, 255, 0.5);
+  color: #ffffff;
+  margin-bottom: 22px;
+  font-size: 16px;
+  font-family: "OpenSansRegular";
+  outline: none;
+}
+
+.input-login::placeholder {
+  color: #ffffff;
+  opacity: 1; /* Firefox */
+  font-family: "OpenSansRegular";
+}
+
+.input-login:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #ffffff;
+  font-family: "OpenSansRegular";
+}
+
+.input-login::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #ffffff;
+  font-family: "OpenSansRegular";
+}
+
+.btn-login {
+  margin-top: 38px;
+  width: 333px;
+  height: 44px;
+  border: 0px;
+  border-radius: 20px;
+  font-size: 22px;
+  color: #000000;
+  font-family: "OpenSansRegular";
+}
+
+.sign-up {
+  margin-top: 30px;
+  font-size: 13px;
+}
+
+.sign-up a {
+  color: #ffffff;
+  text-decoration: none;
+  font-family: "OpenSansRegular";
+}
