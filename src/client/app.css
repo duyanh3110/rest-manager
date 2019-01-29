@@ -1,8 +1,9 @@
-h1 {
-  color: green;
+@font-face {
+  font-family: "OpenSansRegular";
+  src: url("/public/fonts/OpenSans-Regular.ttf") format("truetype");
 }
 
 body {
-  text-align: center;
-  margin: auto;
+  margin: 0;
+  height: 100%;
 }
