@@ -44,7 +44,7 @@ export default class LogIn extends Component {
             />
           </div>
           <div>
-            <button className="btn-login">Sign In</button>
+            <button className="btn-login">Lon Duy Anh</button>
           </div>
         </form>
         <div className="sign-up">
