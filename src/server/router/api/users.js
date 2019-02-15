@@ -31,8 +31,7 @@ router.post("/login", (req, res) => {
   if (!isValid) {
     return res.status(400).json(errors);
   }
-
-  res.json({ msg: "Users work" });
+  res.json({ msg: "huy" });
 });
 
 //Register
@@ -43,10 +42,20 @@ router.post("/register", (req, res) => {
   if (!isValid) {
     return res.status(400).json(errors);
   }
-
-  res.json({ msg: "Users work" });
+  client.connect((err, db, done) => {
+    if (err) {
+      return console.log(err);
+    } else {
+      db.query(
+        "INSERT INTO public.user (UserID ,Name ,email ,Password) VALUES($1,$2,$3,$4)",
+        [req.body.id, req.body.name, req.body.email, req.body.password]
+      );
+      res.json({ msg: "success" });
+    }
+  });
 });
-
+// INSERT INTO public.user("UserID","Name", "email","Password") VALUES ('2','Huy','huy@asd.com','huy123');
+// DELETE FROM public.user where "Name" = 'Huy';
 //list all users
 router.get("/allusers", (req, res) => {
   client.connect((err, db, done) => {
