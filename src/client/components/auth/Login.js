@@ -24,7 +24,7 @@ export default class LogIn extends Component {
       <div className="login-form">
         <div className="form">
           <div className="logo">
-            <img src="public/images/logo-white.png" alt="logo" />
+            <img src="public/images/login/logo-white.png" alt="logo" />
           </div>
           <form onSubmit={this.submitHandler}>
             <div>
