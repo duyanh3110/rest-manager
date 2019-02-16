@@ -31,7 +31,28 @@ router.post("/login", (req, res) => {
   if (!isValid) {
     return res.status(400).json(errors);
   }
-  res.json({ msg: "huy" });
+
+  const email = req.body.email;
+  const password = req.body.password;
+
+  client.connect((err, db, done) => {
+    if (err) {
+      return console.log(err);
+    } else {
+      db.query(
+        "SELECT * FROM public.user WHERE email = $1 ;",
+        [req.body.email],
+        (errors, user) => {
+          if (err) {
+            res.status(404).json(errors);
+          }
+
+          // table.rows[0].name
+          res.json(user);
+        }
+      );
+    }
+  });
 });
 
 //Register
@@ -46,15 +67,23 @@ router.post("/register", (req, res) => {
     if (err) {
       return console.log(err);
     } else {
-      db.query(
-        "INSERT INTO public.user (UserID ,Name ,email ,Password) VALUES($1,$2,$3,$4)",
-        [req.body.id, req.body.name, req.body.email, req.body.password]
-      );
-      res.json({ msg: "success" });
+      var hashpass = req.body.password;
+      bcrypt.genSalt(10, (err, salt) => {
+        bcrypt.hash(hashpass, salt, (err, hash) => {
+          if (err) throw err;
+          hashpass = hash;
+          res.json({ hashpass });
+
+          // db.query(
+          //   "INSERT INTO public.user( user_id, name, email, password ) VALUES ($1,$2,$3,$4);",
+          //   [req.body.id, req.body.name, req.body.email, hashpass]
+          // );
+        });
+      });
     }
   });
 });
-// INSERT INTO public.user("UserID","Name", "email","Password") VALUES ('2','Huy','huy@asd.com','huy123');
+// INSERT INTO public.user("user_id","name", "email","password") VALUES ('1', 'Huy','huy@asd.com','huy123');
 // DELETE FROM public.user where "Name" = 'Huy';
 //list all users
 router.get("/allusers", (req, res) => {
