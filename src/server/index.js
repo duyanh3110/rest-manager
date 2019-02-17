@@ -4,6 +4,7 @@ const morgan = require("morgan");
 // const { Pool } = require("pg");
 const bodyParser = require("body-parser");
 const app = express();
+const passport = require("passport");
 const path = require("path");
 
 const users = require("./router/api/users");
@@ -55,6 +56,9 @@ const client = new Client({
 // });
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
+//passport middleware
+app.use(passport.initialize());
 
 app.use(morgan("dev"));
 

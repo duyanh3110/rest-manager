@@ -47,13 +47,51 @@ router.post("/login", (req, res) => {
             res.status(404).json(errors);
           }
 
+          if (user.rows.length >= 1) {
+            bcrypt.compare(password, user.rows[0].password).then(isMatch => {
+              if (isMatch) {
+                const payload = {
+                  id: user.rows[0].user_id,
+                  name: user.rows[0].name
+                };
+
+                jwt.sign(
+                  payload,
+                  "secret",
+                  { expiresIn: 3600 },
+                  (err, token) => {
+                    res.json({
+                      success: true,
+                      token: "Bearer " + token
+                    });
+                  }
+                ); //log out in 1 hr
+
+                //sign token
+              } else {
+                res.json("fail");
+              }
+            });
+          } else {
+            res.json("There are no account exist");
+          }
+
           // table.rows[0].name
-          res.json(user);
         }
       );
     }
   });
 });
+
+router.get(
+  "/current",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    res.json({
+      msg: "success"
+    });
+  }
+);
 
 //Register
 router.post("/register", (req, res) => {
