@@ -1,0 +1,37 @@
+.formButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+  width: 30.5em;
+  margin-bottom: 2.5em;
+}
+
+.btn-grad {
+  flex: 1 1 auto;
+  width: inherit;
+  padding: 1em;
+  text-align: center;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white !important;
+ /* text-shadow: 0px 0px 10px rgba(0,0,0,0.2);*/
+  box-shadow: 0 0 20px #eee;
+  border-radius: 0.5em;
+ }
+
+ .btn-grad:hover {
+  background-position: right center; /* change the direction of the change here */
+}
+
+@media only screen and (max-width: 375px) {
+  /*For Iphone 375x812*/
+  .formButton {
+    width: 20.75em;
+  }
+
+  .btn-grad {
+    padding: 0.75em;
+  }
+}

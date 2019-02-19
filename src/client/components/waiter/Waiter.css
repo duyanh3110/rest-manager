@@ -1,0 +1,28 @@
+.btn-waiter {
+  font-size: 1em;
+  font-weight: 500;
+  background-image: linear-gradient(to right, #84fab0 0%, #8fd3f4 51%, #84fab0 100%);
+}
+
+.back.toscreen {
+  display: block;
+  text-align: center;
+}
+
+.back.blue {
+  color: #1A69BF;
+}
+
+@media only screen and (max-width: 768px) {
+  /*For Ipad 768x1024*/
+  .btn-waiter {
+    font-size: 1.5em;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  /*For Iphone 375x812*/
+  .btn-waiter {
+    font-size: 1em;
+  }
+}

@@ -1,6 +1,46 @@
+/* src/components/Layout/Layout.css */
 @font-face {
-  font-family: "OpenSansRegular";
-  src: url("/public/fonts/OpenSans-Regular.ttf") format("truetype");
+  font-family: 'OpenSansRegular';
+  font-style: normal;
+  font-weight: 300;
+  src: local('OpenSans Light'), local('OpenSans-Light'),
+    url(/public/fonts/OpenSans-Light.ttf) format("truetype"), /* IE9 Compat Modes */
+    url(/public/fonts/OpenSans-Light.woff2) format('woff2'),
+    url(/public/fonts/OpenSans-Light.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'OpenSansRegular';
+  font-style: normal;
+  font-weight: 400;
+  src: local('OpenSans'), local('OpenSans-Regular'),
+    url(/public/fonts/OpenSans-Regular.ttf) format("truetype"), /* IE9 Compat Modes */
+    url(/public/fonts/OpenSans-Regular.woff2) format('woff2'),
+    url(/public/fonts/OpenSans-Regular.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'OpenSansRegular';
+  font-style: normal;
+  font-weight: 500;
+  src: local('OpenSans SemiBold'), local('OpenSans-SemiBold'),
+    url(/public/fonts/OpenSans-SemiBold.ttf) format("truetype"), /* IE9 Compat Modes */
+    url(/public/fonts/OpenSans-SemiBold.woff2) format('woff2'),
+    url(/public/fonts/OpenSans-SemiBold.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'OpenSansRegular';
+  font-style: normal;
+  font-weight: 700;
+  src: local('OpenSans Bold'), local('OpenSans-Bold'),
+    url(/public/fonts/OpenSans-Bold.ttf) format("truetype"), /* IE9 Compat Modes */
+    url(/public/fonts/OpenSans-Bold.woff2) format('woff2'),
+    url(/public/fonts/OpenSans-Bold.woff) format('woff');
+}
+
+html {
+  font-family: 'OpenSans', sans-serif;
 }
 
 body {

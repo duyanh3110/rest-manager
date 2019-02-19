@@ -1,0 +1,88 @@
+
+.listFeature {
+  display: flex;
+}
+
+.back.red {
+  color: red;
+}
+
+.tagName {
+  display: inline-block;
+  margin-right: 1.5em;
+  margin-bottom: 1.5em;
+  width: 22em;
+  height: 8.25em;
+  border-radius: 1em;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.tagName:hover {
+  width: 22.75em;
+  height: 9em;
+  -moz-box-shadow: 0 8px 17px 0 #6c757d, 0 6px 20px 0 rgba(0,0,0,.19);
+  -webkit-box-shadow: 0 8px 17px 0 #6c757d, 0 6px 20px 0 rgba(0,0,0,.19);
+  box-shadow: 0 8px 17px 0 #6c757d, 0 6px 20px 0 rgba(0,0,0,.19);
+}
+
+.tagName p {
+  position: relative;
+  margin: auto;
+  color: #fff;
+  font-size: 3em;
+  font-weight: 100;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  float: left;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.waiter {
+  background-image: url(/public/images/screen/waiter.png);
+}
+
+.cashier {
+  background-image: url(/public/images/screen/cashier.png);
+}
+
+.manager {
+  background-image: url(/public/images/screen/manager.png);
+}
+
+@media only screen and (max-width: 1390px) {
+  /*For Laptop max screen 15.6inch*/
+  .listFeature {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  /*For Ipad 768x1024*/
+  .tagName {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 39.65em;
+    height: 14.8em;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  /*For Iphone 375x812*/
+  .tagName {
+    width: 22em;
+    height: 8.25em;
+  }
+
+  .back {
+    font-size: 1em;
+  }
+}
