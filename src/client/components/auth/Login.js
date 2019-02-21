@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import {Bootstrap, Container, Grid, Row, Col} from 'react-bootstrap';
+// import {
+//   Bootstrap, Container, Grid, Row, Col
+// } from 'react-bootstrap';
 import './Login.css';
 
 export default class LogIn extends Component {
@@ -46,7 +48,9 @@ export default class LogIn extends Component {
               />
             </div>
             <div>
-              <button className="btn-login">Sign In</button>
+              <button type="submit" className="btn-login">
+                Sign In
+              </button>
             </div>
           </form>
           <div className="sign-up">
