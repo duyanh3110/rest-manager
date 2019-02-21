@@ -21,7 +21,17 @@ const client = new Client({
   ssl: true
 });
 
-router.post("/test", (req, res) => res.json({ msg: "Users work" }));
+client.connect();
+
+router.post("/test", (req, res) => {
+  client.query("SELECT * FROM public.user;", (errors, user) => {
+    if (errors) {
+      res.status(404).json(errors);
+    }
+    // table.rows[0].name
+    res.json(user);
+  });
+});
 
 //Login
 router.post("/login", (req, res) => {
@@ -35,52 +45,37 @@ router.post("/login", (req, res) => {
   const email = req.body.email;
   const password = req.body.password;
 
-  client.connect((err, db, done) => {
-    if (err) {
-      return console.log(err);
-    } else {
-      db.query(
-        "SELECT * FROM public.user WHERE email = $1 ;",
-        [req.body.email],
-        (errors, user) => {
-          if (err) {
-            res.status(404).json(errors);
-          }
+  client.query(
+    "SELECT * FROM public.user WHERE email = $1 ;",
+    [req.body.email],
+    (errors, user) => {
+      if (errors) {
+        res.status(404).json(errors);
+      } else {
+        if (user.rows.length > 0) {
+          bcrypt.compare(password, user.rows[0].password).then(isMatch => {
+            if (isMatch) {
+              const payload = {
+                id: user.rows[0].user_id,
+                name: user.rows[0].name
+              };
 
-          if (user.rows.length >= 1) {
-            bcrypt.compare(password, user.rows[0].password).then(isMatch => {
-              if (isMatch) {
-                const payload = {
-                  id: user.rows[0].user_id,
-                  name: user.rows[0].name
-                };
-
-                jwt.sign(
-                  payload,
-                  "secret",
-                  { expiresIn: 3600 },
-                  (err, token) => {
-                    res.json({
-                      success: true,
-                      token: "Bearer " + token
-                    });
-                  }
-                ); //log out in 1 hr
-
-                //sign token
-              } else {
-                res.json("fail");
-              }
-            });
-          } else {
-            res.json("There are no account exist");
-          }
-
-          // table.rows[0].name
+              jwt.sign(payload, "secret", { expiresIn: 3600 }, (err, token) => {
+                res.json({
+                  success: true,
+                  token: "Bearer " + token
+                });
+              }); //log out in 1 hr
+            } else {
+              res.json("fail");
+            }
+          });
+        } else {
+          res.json("There are no account exist");
         }
-      );
+      }
     }
-  });
+  );
 });
 
 router.get(
@@ -88,7 +83,9 @@ router.get(
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
     res.json({
-      msg: "success"
+      user_id: req.user.user_id,
+      name: req.user.name,
+      email: req.user.email
     });
   }
 );
@@ -101,25 +98,32 @@ router.post("/register", (req, res) => {
   if (!isValid) {
     return res.status(400).json(errors);
   }
-  client.connect((err, db, done) => {
-    if (err) {
-      return console.log(err);
-    } else {
-      var hashpass = req.body.password;
-      bcrypt.genSalt(10, (err, salt) => {
-        bcrypt.hash(hashpass, salt, (err, hash) => {
-          if (err) throw err;
-          hashpass = hash;
-          res.json({ hashpass });
 
-          // db.query(
-          //   "INSERT INTO public.user( user_id, name, email, password ) VALUES ($1,$2,$3,$4);",
-          //   [req.body.id, req.body.name, req.body.email, hashpass]
-          // );
+  client.query(
+    "SELECT * FROM public.user WHERE email = $1 ;",
+    [req.body.email],
+    (errors, user) => {
+      if (user.rows.length == 0) {
+        var hashpass = req.body.password;
+        bcrypt.genSalt(10, (err, salt) => {
+          bcrypt.hash(hashpass, salt, (err, hash) => {
+            if (err) throw err;
+            hashpass = hash;
+            res.json({ hashpass });
+
+            client.query(
+              "INSERT INTO public.user( user_id, name, email, password ) VALUES ($1,$2,$3,$4);",
+              [req.body.id, req.body.name, req.body.email, hashpass]
+            );
+          });
         });
-      });
+      } else {
+        res.json({
+          msg: "this email already register"
+        });
+      }
     }
-  });
+  );
 });
 // INSERT INTO public.user("user_id","name", "email","password") VALUES ('1', 'Huy','huy@asd.com','huy123');
 // DELETE FROM public.user where "Name" = 'Huy';

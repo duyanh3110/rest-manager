@@ -2,6 +2,8 @@ const express = require("express");
 const os = require("os");
 const morgan = require("morgan");
 // const { Pool } = require("pg");
+const JwtStrategy = require("passport-jwt").Strategy;
+const ExtractJwt = require("passport-jwt").ExtractJwt;
 const bodyParser = require("body-parser");
 const app = express();
 const passport = require("passport");
@@ -23,7 +25,27 @@ const client = new Client({
   ssl: true
 });
 
-// client.connect();
+client.connect();
+
+const opts = {
+  jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
+  secretOrKey: "secret"
+  // process.env.SECRET_OR_KEY
+};
+
+const strategy = new JwtStrategy(opts, (payload, next) => {
+  //TODO GET USER FROM DB
+  client.query(
+    "SELECT * FROM public.user WHERE user_id = $1;",
+    [payload.id],
+    (errors, user) => {
+      if (user.rows.length > 0) {
+        return next(null, user.rows[0]);
+      }
+      return next(null, false);
+    }
+  );
+});
 
 // client.query(
 //   "SELECT table_schema,table_name FROM information_schema.tables;",
@@ -39,25 +61,11 @@ const client = new Client({
 //   }
 // );
 
-// app.get("/api/user", (req, res) => {
-//   client.connect((err, db, done) => {
-//     if (err) {
-//       return console.log(err);
-//     } else {
-//       db.query("SELECT * FROM public.user;", (errors, user) => {
-//         if (err) {
-//           res.status(404).json(errors);
-//         }
-//         // table.rows[0].name
-//         res.json(user);
-//       });
-//     }
-//   });
-// });
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 //passport middleware
+passport.use(strategy);
 app.use(passport.initialize());
 
 app.use(morgan("dev"));
