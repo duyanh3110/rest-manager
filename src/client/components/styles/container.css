@@ -1,0 +1,48 @@
+.container {
+  margin-left: 3.5em;
+  margin-right: 3.5em;
+  margin-top: 2em;
+  font-family: "OpenSansRegular";
+}
+
+.main {
+  position: fixed;
+}
+
+h5.title {
+  font-weight: 700;
+  margin-bottom: 1.5em;
+}
+
+.back {
+  display: contents;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.back:hover {
+  text-decoration: underline;
+}
+
+@media only screen and (max-width: 768px) {
+  /*For Ipad 768x1024*/
+  .container {
+    margin: 0;
+  }
+
+  .main {
+    display: block;
+    position: absolute;
+    margin: 0;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+
+  .back {
+    display: block;
+    font-size: 1.25em;
+    text-align: center;
+  }
+}
