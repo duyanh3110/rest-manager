@@ -3,7 +3,7 @@ const os = require('os');
 const morgan = require('morgan');
 // const { Pool } = require("pg");
 const JwtStrategy = require('passport-jwt').Strategy;
-const { ExtractJwt } = require('passport-jwt').ExtractJwt;
+const ExtractJwt = require('passport-jwt').ExtractJwt;
 const bodyParser = require('body-parser');
 
 const app = express();
@@ -34,6 +34,9 @@ const opts = {
 const strategy = new JwtStrategy(opts, (payload, next) => {
   // TODO GET USER FROM DB
   client.query('SELECT * FROM public.user WHERE user_id = $1;', [payload.id], (errors, user) => {
+    if (errors) {
+      return done(errors, false);
+    }
     if (user.rows.length > 0) {
       return next(null, user.rows[0]);
     }

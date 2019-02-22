@@ -1,7 +1,25 @@
 import React, { Component } from 'react';
 import './Screen.css';
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
-export default class Screen extends Component {
+import { connect } from 'react-redux';
+import { logoutUser } from '../../actions/authActions';
+
+class Screen extends Component {
+  onLogoutClick(e) {
+    e.preventDefault();
+
+    this.props.logoutUser();
+    this.props.history.push('/');
+  }
+
+  componentDidMount() {
+    if (!this.props.auth.isAuthenticated) {
+      this.props.history.push('/');
+    }
+  }
+
   render() {
     return (
       <div className="container">
@@ -18,9 +36,25 @@ export default class Screen extends Component {
               <p>Manager</p>
             </div>
           </div>
-          <p className="back red">Sign out</p>
+          <p className="back red" onClick={this.onLogoutClick.bind(this)}>
+            Sign out
+          </p>
         </div>
       </div>
     );
   }
 }
+
+Screen.propTypes = {
+  logoutUser: PropTypes.func.isRequired,
+  auth: PropTypes.object.isRequired
+};
+
+const mapStateToProps = state => ({
+  auth: state.auth
+});
+
+export default connect(
+  mapStateToProps,
+  { logoutUser }
+)(Screen);
