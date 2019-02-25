@@ -11,6 +11,7 @@ import store from './store';
 import Login from './components/auth/Login';
 import Screen from './components/screen/Screen';
 import Waiter from './components/waiter/Waiter';
+import Menu from './components/waiter/menu/Menu';
 import setAuthToken from './utils/setAuthToken';
 import { logoutUser, setCurrentUser } from './actions/authActions';
 
@@ -64,6 +65,7 @@ export default class App extends Component {
             <Route path="/private" component={Private} />
             <Route path="/screen" component={Screen} />
             <Route path="/waiter" component={Waiter} />
+            <Route path="/menu" component={Menu} />
           </Switch>
         </Router>
       </Provider>
