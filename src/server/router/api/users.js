@@ -1,7 +1,7 @@
 const express = require('express');
 
 const router = express.Router();
-
+const uniqueString = require('unique-string');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const { Client } = require('pg');
@@ -98,10 +98,11 @@ router.post('/register', (req, res) => {
           if (err) throw err;
           hashpass = hash;
           res.json({ hashpass });
+          const uniqueID = uniqueString();
 
           client.query(
             'INSERT INTO public.user( user_id, name, email, password ) VALUES ($1,$2,$3,$4);',
-            [req.body.id, req.body.name, req.body.email, hashpass]
+            [uniqueID, req.body.name, req.body.email, hashpass]
           );
         });
       });
