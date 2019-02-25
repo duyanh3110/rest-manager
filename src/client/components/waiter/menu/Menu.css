@@ -1,0 +1,60 @@
+.container {
+  padding: 0 !important;
+  margin: auto;
+}
+
+.back-btn {
+  text-align: left;
+  padding-left: 30px;
+  margin-top: 11px;
+  margin-bottom: 21px;
+}
+
+.title {
+  text-align: left;
+  padding-left: 30px;
+  margin-bottom: 47px;
+  font-size: 30px;
+}
+
+.cate-item {
+  margin-bottom: 65px;
+}
+
+.cate-item img {
+  position: relative;
+  border-radius: 10px;
+}
+
+.cate-item-name {
+  position: absolute;
+  width: 285px;
+  text-align: center;
+  color: #ffffff;
+  font-size: 50px;
+  top: 105px;
+  left: 45px;
+}
+
+.receipt {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 67.12px;
+  width: 768px;
+  padding: 0 45px;
+  background-image: linear-gradient(
+    to right,
+    #84fab0 0%,
+    #8fd3f4 51%,
+    #84fab0 100%
+  );
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.receipt-text {
+  font-size: 25px;
+  color: #ffffff;
+}
