@@ -1,0 +1,40 @@
+.top-num {
+  padding: 0.75em 1.5em;
+  border-radius: 0.75em;
+  background-size: 200% auto;
+  background-image: linear-gradient(
+    to right, #243949 0%, #517FA4 51%, #243949 100%);
+}
+
+.tagNum {
+  position: relative;
+  display: flex;
+}
+
+.name-num {
+  display: inline-block;
+  position: relative;
+  color: white;
+  font-size: 1.5em;
+  font-weight: 500;
+  margin-right: 0.5em;
+  margin-bottom: 0;
+  line-height: 1.5em;
+}
+
+@media only screen and (max-width: 375px) {
+  /*For Iphone 375x812*/
+  .name-num {
+    font-size: 1em;
+    line-height: 2em;
+  }
+
+  .round-num {
+    width: 2em;
+    height: 2em;
+  }
+
+  .round-num p {
+    font-size: 1em;
+  }
+}
