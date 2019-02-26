@@ -1,0 +1,33 @@
+[
+    {
+      "id": 1,
+      "name": "California Style",
+      "image": "public/images/pizza/California Style.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Chicago Deep Dish",
+      "image": "public/images/pizza/Chicago Deep Dish.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Greek Pizza",
+      "image": "public/images/pizza/Greek Pizza.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Neapolitan",
+      "image": "public/images/pizza/Neapolitan.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Sicilian Pizza",
+      "image": "public/images/pizza/Sicilian Pizza.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Tomato Pie",
+      "image": "public/images/pizza/Tomato Pie.jpg"
+    }
+  ]
+  

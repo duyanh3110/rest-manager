@@ -1,53 +1,28 @@
 [
     {
       "id": 1,
-      "name": "All-American Dessert",
-      "image": "public/images/burger/All-American.jpg"
+      "name": "Chocolate-Mint Bars",
+      "image": "public/images/dessert/Chocolate-Mint Bars.jpg"
     },
     {
       "id": 2,
-      "name": "Bacon Burger",
-      "image": "public/images/burger/Bacon Burgers.jpg"
+      "name": "Lemon-Scented Blueberry Cupcakes",
+      "image": "public/images/dessert/Lemon-Scented Blueberry Cupcakes.jpg"
     },
     {
       "id": 3,
-      "name": "Beef Burger",
-      "image": "public/images/burger/Beef Burgers.jpg"
+      "name": "Nathan’s Lemon Cake",
+      "image": "public/images/dessert/Nathan’s Lemon Cake.jpg"
     },
     {
       "id": 4,
-      "name": "Cheddar BLT",
-      "image": "public/images/burger/Cheddar BLT Burgers.jpg"
+      "name": "Raspberry-Rhubarb Pie",
+      "image": "public/images/dessert/Raspberry-Rhubarb Pie.jpg"
     },
     {
       "id": 5,
-      "name": "Cheddar-and-Onion",
-      "image": "public/images/burger/Cheddar-and-Onion.jpg"
-    },
-    {
-      "id": 6,
-      "name": "Chile Stuffed",
-      "image": "public/images/burger/Chile-Stuffed.jpg"
-    },
-    {
-      "id": 7,
-      "name": "Green-Chile",
-      "image": "public/images/burger/Green-Chile.jpg"
-    },
-    {
-      "id": 8,
-      "name": "Minetta",
-      "image": "public/images/burger/Minetta.jpg"
-    },
-    {
-      "id": 9,
-      "name": "Pug Burger",
-      "image": "public/images/burger/Pug Burger.jpg"
-    },
-    {
-      "id": 10,
-      "name": "Umami Burger",
-      "image": "public/images/burger/Umami Burgers.jpg"
+      "name": "Strawberry-Almond Cream Tart",
+      "image": "public/images/dessert/Strawberry-Almond Cream Tart.jpg"
     }
   ]
   
