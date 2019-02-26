@@ -27,6 +27,25 @@ h5.title {
   text-decoration: underline;
 }
 
+.round-num {
+  display: inline-block;
+  position: relative;
+  width: 2.5em;
+  height: 2.5em;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.round-num p {
+  font-size: 1.25em;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%)
+}
+
 @media only screen and (max-width: 768px) {
   /*For Ipad 768x1024*/
   .container {

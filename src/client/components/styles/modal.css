@@ -11,9 +11,21 @@
   border-radius: 1.25em;
 }
 
+.title-modal {
+  text-align: center;
+  font-size: 1.75em;
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
+}
+
 @media only screen and (max-width: 375px) {
   /*For Iphone 375x812*/
   .formButton.modal-btn {
     width: 17em;
+  }
+
+  .title-modal {
+    font-size: 1.5em;
+    margin-top: 1em;
   }
 }

@@ -86,16 +86,14 @@ export default class Categories extends Component {
           <div className={backgroundNav} onClick={this.toggleNav}></div>
         </div>
 
-        <Modal className="modal" show={this.state.showModal} onHide={this.handleCloseModal}>
-
+        <Modal show={this.state.showModal} onHide={this.handleCloseModal}>
           <Modal.Body>
-            <p>Finalize Order?</p>
+            <p className="title-modal">Finalize Order?</p>
             <div className="formButton modal-btn">
               <a className="btn-grad btn-waiter">Confirm</a>
             </div>
             <p className="back blue toscreen" onClick={this.handleCloseModal}>Not yet</p>
           </Modal.Body>
-
         </Modal>
       </div>
     );

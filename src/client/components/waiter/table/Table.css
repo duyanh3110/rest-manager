@@ -1,0 +1,43 @@
+.table-num {
+  margin-bottom: 1.5em;
+}
+
+.table-num .round-num {
+  border: 1px solid black;
+  margin-right: 1em;
+  margin-bottom: 1em;
+}
+
+.table-num .round-num.selected {
+  color: white;
+  border: none;
+  background-size: 200% auto;
+  background-image: linear-gradient(
+    to right, #453A94 -30%, #F43B47 45%, #453A94 100%);
+}
+
+.top-num.table {
+  margin-bottom: 3em;
+  background-image: linear-gradient(
+    to right, #453A94 -30%, #F43B47 45%, #453A94 100%);
+}
+
+.top-num.table .round-num p {
+  font-size: 1.5em;
+}
+
+.top-num.table input {
+  background: transparent;
+  border: none;
+  width: 2em;
+  font-size: 1.5em;
+  margin-left: 1.25em;
+}
+
+.top-num.table input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: white;
+}
+
+.top-num.table input::-moz-placeholder { /* Firefox 19+ */
+  color: white;
+}

@@ -1,8 +1,24 @@
 import React, { Component } from 'react';
+import { Modal, Button } from 'react-bootstrap';
 import TotalCart from "../cart/Cart";
 import './Finalize.css';
 
 export default class Finalize extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      showFinalModal: false
+    };
+  }
+
+  handleCloseFinalModal = () => {
+    this.setState({ showFinalModal: false });
+  }
+
+  handleshowFinalModal = () => {
+    this.setState({ showFinalModal: true });
+  }
+
   render() {
     return (
       <div className="container">
@@ -23,11 +39,20 @@ export default class Finalize extends Component {
               <TotalCart />
             </div>
             <div className="formButton">
-              <a className="btn-grad btn-waiter">Finalize Order</a>
+              <a className="btn-grad btn-waiter" onClick={this.handleshowFinalModal}>Finalize Order</a>
             </div>
-            <p className="back blue toscreen">Not Yet</p>
+            <p className="back red toscreen">Not Yet</p>
           </div>
         </div>
+
+        <Modal show={this.state.showFinalModal} onHide={this.handleCloseFinalModal}>
+          <Modal.Body onClick={this.handleCloseFinalModal}>
+            <p className="title-modal">Order Placed</p>
+            <div className="formButton modal-btn">
+              <a className="btn-grad btn-waiter">Confirm</a>
+            </div>
+          </Modal.Body>
+        </Modal>
       </div>
     );
   }

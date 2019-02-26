@@ -12,6 +12,7 @@
 
 .dish-detail p {
   display: inline-block;
+  position: relative;
   font-size: 1.25em;
 }
 
@@ -20,6 +21,36 @@
   height: 3.75em;
   margin-right: 1.25em;
   border-radius: 50%;
+}
+
+/*Modal for each dish*/
+.modal-content .dish-detail p {
+  font-size: 2em;
+  line-height: 4em;
+}
+
+.modal-content .dish-detail img {
+  width: 6.5em;
+  height: 6.5em;
+}
+
+.modal-content .top-num {
+  width: 30.5em;
+}
+
+.two-btn {
+  width: 100%;
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  padding-bottom: 1.5em;
+  padding-left: 8em;
+  padding-right: 8em;
+}
+
+.two-btn img {
+  width: 3em;
+  height: 3em;
 }
 
 @media only screen and (max-width: 375px) {

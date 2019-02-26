@@ -16,12 +16,12 @@
   },
   {
     "id": 4,
-    "name": "Cheddar BLT Burger",
+    "name": "Cheddar BLT",
     "image": "public/images/burger/Cheddar BLT Burgers.jpg"
   },
   {
     "id": 5,
-    "name": "Cheddar-and-Onion Burger",
+    "name": "Cheddar-and-Onion",
     "image": "public/images/burger/Cheddar-and-Onion.jpg"
   },
   {
