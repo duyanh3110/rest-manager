@@ -41,7 +41,7 @@ export default class Categories extends Component {
               <img src="public/images/button/back.png" alt="logo" />
             </div>
             <div className="btn-nav">
-              <img src="public/images/button/back.png" alt="logo" onClick={this.toggleNav}/>
+              <img src="public/images/button/nav_round.png" alt="logo" onClick={this.toggleNav}/>
             </div>
           </div>
           <div className="main cate">

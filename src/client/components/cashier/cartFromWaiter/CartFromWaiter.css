@@ -1,0 +1,49 @@
+.list-dish.final {
+  height: 20em;
+}
+
+.list-dish.final .dish-detail {
+  border-bottom: 1px solid gray;
+  padding-bottom: 1em;
+}
+
+.list-dish.final .dish-detail .dish-name {
+  display: flex;
+}
+
+.infoFinal {
+  display: inline-block;
+  position: relative;
+}
+
+.infoFinal p {
+  margin: 0;
+}
+
+.infoFinal .name {
+  margin-bottom: 0.25em;
+}
+
+.infoFinal .price {
+  color: #C1C6CE;
+  font-weight: 700;
+}
+
+.infoFinal .amount {
+  color: #517FA4;
+  font-weight: 700;
+}
+
+.dish-price {
+  font-size: 1.25em;
+}
+
+.list-dish.final .total {
+  width: 100%;
+  display: inline-flex;
+  justify-content: space-between;
+}
+
+.list-dish.final .dish-price {
+  display: inline-block;
+}
