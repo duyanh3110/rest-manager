@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "All-American",
+    "amount": 2,
+    "image": "public/images/burger/All-American.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Bacon Burger",
+    "amount": 5,
+    "image": "public/images/burger/Bacon Burgers.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Beef Burger",
+    "amount": 6,
+    "image": "public/images/burger/Beef Burgers.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Cheddar BLT Burger",
+    "amount": 8,
+    "image": "public/images/burger/Cheddar BLT Burgers.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Cheddar-and-Onion Burger",
+    "amount": 1,
+    "image": "public/images/burger/Cheddar-and-Onion.jpg"
+  }
+]

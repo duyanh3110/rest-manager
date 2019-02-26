@@ -1,0 +1,24 @@
+.list-dish.cart {
+  height: 32em;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+
+.dish-name {
+  display: inline-block;
+}
+
+.round-num.cart {
+  position: relative;
+  color: white;
+  background-size: 200% auto;
+  background-image: linear-gradient(
+    to right, #243949 0%, #517FA4 51%, #243949 100%);
+}
+
+@media only screen and (max-width: 375px) {
+  /*For Iphone 375x812*/
+  .list-dish.cart {
+    height: 26em;
+  }
+}
