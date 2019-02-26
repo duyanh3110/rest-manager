@@ -1,0 +1,14 @@
+.btn-cancel {
+  margin-top: 2.5em;
+  font-size: 1.5em;
+  font-weight: 500;
+  background-image: linear-gradient(
+    to right, #FFB199 0%, #FF0844 51%, #FFB199 100%);
+}
+
+.btn-continue {
+  font-size: 1.5em;
+  font-weight: 500;
+  background-image: linear-gradient(
+    to right, #A6C1EE 0%, #30CFD0 51%, #A6C1EE 100%);
+}
