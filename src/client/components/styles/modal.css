@@ -1,0 +1,19 @@
+/*Modal confirm*/
+.modal-dialog {
+  position: absolute;
+  max-width: inherit;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) !important;
+}
+
+.modal-content {
+  border-radius: 1.25em;
+}
+
+@media only screen and (max-width: 375px) {
+  /*For Iphone 375x812*/
+  .formButton.modal-btn {
+    width: 17em;
+  }
+}

@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "name": "All-American",
+    "image": "public/images/burger/All-American.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Bacon Burger",
+    "image": "public/images/burger/Bacon Burgers.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Beef Burger",
+    "image": "public/images/burger/Beef Burgers.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Cheddar BLT Burger",
+    "image": "public/images/burger/Cheddar BLT Burgers.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Cheddar-and-Onion Burger",
+    "image": "public/images/burger/Cheddar-and-Onion.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Chile Stuffed",
+    "image": "public/images/burger/Chile-Stuffed.jpg"
+  },
+  {
+    "id": 7,
+    "name": "Green-Chile",
+    "image": "public/images/burger/Green-Chile.jpg"
+  },
+  {
+    "id": 8,
+    "name": "Minetta",
+    "image": "public/images/burger/Minetta.jpg"
+  },
+  {
+    "id": 9,
+    "name": "Pug Burger",
+    "image": "public/images/burger/Pug Burger.jpg"
+  },
+  {
+    "id": 10,
+    "name": "Umami Burger",
+    "image": "public/images/burger/Umami Burgers.jpg"
+  }
+]

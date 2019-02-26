@@ -1,0 +1,45 @@
+.list-dish {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 15em);
+  overflow-y: scroll;
+}
+
+.dish-detail {
+  position: relative;
+  margin-bottom: 1.15em;
+}
+
+.dish-detail p {
+  display: inline-block;
+  font-size: 1.25em;
+}
+
+.dish-detail img {
+  width: 3.75em;
+  height: 3.75em;
+  margin-right: 1.25em;
+  border-radius: 50%;
+}
+
+@media only screen and (max-width: 375px) {
+  /*For Iphone 375x812*/
+  .list-dish {
+    height: calc(100vh - 13.5em);
+  }
+
+  .dish-detail {
+    margin-bottom: 1em;
+  }
+
+  .dish-detail p {
+    font-size: 1em;
+  }
+
+  .dish-detail img {
+    width: 3.25em;
+    height: 3.25em;
+    margin-right: 1em;
+    border-radius: 50%;
+  }
+}

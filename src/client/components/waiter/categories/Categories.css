@@ -1,0 +1,188 @@
+.pika {
+  padding-top: 1em;
+  padding-left: 3.75em;
+  padding-right: 3.75em;
+}
+
+.top-nav {
+  display: inline-flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btn-nav, .btn-back {
+  display: inline-block;
+}
+
+.main.cate {
+  position: relative;
+  margin-top: 1.25em;
+}
+
+.formButton.recipe {
+  width: 100%;
+  margin: 0;
+}
+
+.btn-recipe {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 3.75em;
+  padding-right: 3.75em;
+  bottom: 0;
+  left: 0;
+  border-radius: 0;
+  background-image: linear-gradient(
+    to right, #84fab0 0%, #8fd3f4 51%, #84fab0 100%);
+}
+
+.formButton.recipe p {
+  position: relative;
+  font-size: 1.5em;
+  margin: 0;
+}
+
+/*Sidebar*/
+.sideBar {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  top: 0;
+  overflow: hidden;
+  transition: all 400ms ease;
+}
+
+.background-nav {
+  height: inherit;
+  width: inherit;
+  background-color: gray;
+  transition: all 400ms ease;
+}
+
+.sideNav {
+  position: absolute;
+  background-color: white;
+  height: 100vh;
+  right: 0;
+  z-index: 2;
+  transition: all 300ms ease-in-out;
+}
+
+.sideBar.hide {
+  opacity: 0;
+  z-index: -1;
+}
+
+.background-nav.hide {
+  opacity: 0;
+}
+
+.sideNav.hide {
+  width: 0;
+  opacity: 0;
+}
+
+.sideBar.show {
+  opacity: 1;
+  z-index: 1;
+}
+
+.background-nav.show {
+  opacity: 0.5;
+}
+
+.sideNav.show {
+  width: 20em;
+  opacity: 1;
+}
+
+.title.side {
+  margin-top: 2.5em;
+  margin-left: 1em;
+}
+
+.cate-name {
+  margin-bottom: 1.25em;
+  width: 100%;
+  height: 5em;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 300ms ease-in-out;
+}
+
+.cate-name p {
+  position: relative;
+  margin: auto;
+  color: #fff;
+  font-size: 2em;
+  font-weight: 100;
+  float: left;
+  line-height: 2.25em;
+  margin-left: 1em;
+  transition: all 0.3s ease-in-out;
+}
+
+.cate-name.burger {
+  background-image: url(/public/images/menu/burger.png);
+}
+
+.cate-name.pizza {
+  background-image: url(/public/images/menu/pizza.png);
+}
+
+.cate-name.drink {
+  background-image: url(/public/images/menu/drink.png);
+}
+
+.cate-name.dessert {
+  background-image: url(/public/images/menu/dessert.png);
+}
+
+@media only screen and (max-width: 768px) {
+  /*For Ipad 768x1024*/
+  .main.cate {
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: none;
+    margin-top: 2em;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  /*For Iphone 375x812*/
+  .pika {
+    margin: 0;
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+  }
+
+  .main.cate {
+    margin-top: 1.5em;
+  }
+
+  .btn-recipe {
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+  }
+
+  .formButton.recipe img {
+    width: 2em;
+    height: 2em;
+  }
+
+  .formButton.recipe p {
+    font-size: 1.2em;
+  }
+
+  .sideNav.show {
+    width: 14em;
+  }
+}

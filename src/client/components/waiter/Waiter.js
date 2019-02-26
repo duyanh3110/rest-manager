@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Waiter.css';
 
-export default class Screen extends Component {
+export default class Waiter extends Component {
   render() {
     return (
       <div className="container">
