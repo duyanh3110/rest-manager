@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './app.css';
 import './components/styles/container.css';
 import './components/styles/btnGradient.css';
+import './components/styles/modal.css';
 import {
   Route, Link, Redirect, Switch, BrowserRouter as Router
 } from 'react-router-dom';
@@ -13,6 +14,7 @@ import Screen from './components/screen/Screen';
 import Waiter from './components/waiter/Waiter';
 import Menu from './components/waiter/menu/Menu';
 import Categories from './components/waiter/categories/Categories';
+import Finalize from './components/waiter/finalize/Finalize';
 import setAuthToken from './utils/setAuthToken';
 import { logoutUser, setCurrentUser } from './actions/authActions';
 
@@ -68,6 +70,7 @@ export default class App extends Component {
             <Route path="/waiter" component={Waiter} />
             <Route path="/menu" component={Menu} />
             <Route path="/categories" component={Categories} />
+            <Route path="/finalize" component={Finalize} />
           </Switch>
         </Router>
       </Provider>

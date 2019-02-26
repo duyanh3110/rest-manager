@@ -5,7 +5,7 @@ export default class SideBar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      showNav: this.props.navState
+      showNav: this.props.show
     };
   }
 

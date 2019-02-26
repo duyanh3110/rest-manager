@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
+import { Modal, Button } from 'react-bootstrap';
 import ListDish from "../listDish/ListDish";
+import SideBar from "../sideBar/SideBar";
 import './Categories.css';
 
 export default class Categories extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      showNav: false
+      showNav: false,
+      showModal: false
     };
   }
 
@@ -14,6 +17,14 @@ export default class Categories extends Component {
     this.setState({
       showNav: !this.state.showNav
     })
+  }
+
+  handleCloseModal = () => {
+    this.setState({ showModal: false });
+  }
+
+  handleShowModal = () => {
+    this.setState({ showModal: true });
   }
 
   render() {
@@ -42,7 +53,7 @@ export default class Categories extends Component {
             </div>
           </div>
           <div className="main cate">
-            <h5 className="title">Categories</h5>
+            <h5 className="title">Burger</h5>
             <ListDish />
           </div>
         </div>
@@ -50,9 +61,10 @@ export default class Categories extends Component {
           <div className="btn-grad btn-recipe">
             <img src="public/images/button/cancel.png" alt="logo" />
             <p>3 Dishes</p>
-            <img src="public/images/button/accept.png" alt="logo" />
+            <img src="public/images/button/accept.png" alt="logo" onClick={this.handleShowModal}/>
           </div>
         </div>
+
         <div className={sideBar}>
           <div className={sideNav}>
             <h5 className="title side">Categories</h5>
@@ -73,6 +85,18 @@ export default class Categories extends Component {
           </div>
           <div className={backgroundNav} onClick={this.toggleNav}></div>
         </div>
+
+        <Modal className="modal" show={this.state.showModal} onHide={this.handleCloseModal}>
+
+          <Modal.Body>
+            <p>Finalize Order?</p>
+            <div className="formButton modal-btn">
+              <a className="btn-grad btn-waiter">Confirm</a>
+            </div>
+            <p className="back blue toscreen" onClick={this.handleCloseModal}>Not yet</p>
+          </Modal.Body>
+
+        </Modal>
       </div>
     );
   }

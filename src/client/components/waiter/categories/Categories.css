@@ -52,6 +52,7 @@
   height: 100vh;
   z-index: 1;
   top: 0;
+  overflow: hidden;
   transition: all 400ms ease;
 }
 
@@ -63,10 +64,10 @@
 }
 
 .sideNav {
-  position: relative;
+  position: absolute;
   background-color: white;
   height: 100vh;
-  float: right;
+  right: 0;
   z-index: 2;
   transition: all 300ms ease-in-out;
 }
@@ -105,7 +106,7 @@
 }
 
 .cate-name {
-  margin-bottom: 1.5em;
+  margin-bottom: 1.25em;
   width: 100%;
   height: 5em;
   background-position: center;
@@ -179,5 +180,9 @@
 
   .formButton.recipe p {
     font-size: 1.2em;
+  }
+
+  .sideNav.show {
+    width: 14em;
   }
 }
