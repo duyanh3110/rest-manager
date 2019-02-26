@@ -1,8 +1,10 @@
 .table-num {
   margin-bottom: 1.5em;
+  padding-left: 1.5em;
 }
 
 .table-num .round-num {
+  display: inline-block;
   border: 1px solid black;
   margin-right: 1em;
   margin-bottom: 1em;

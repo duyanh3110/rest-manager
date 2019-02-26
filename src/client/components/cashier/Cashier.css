@@ -1,0 +1,65 @@
+.cashier {
+  width: 30.5em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  margin-bottom: 1em;
+  border-radius: 0.5em;
+  background-size: 200% auto;
+}
+
+.cashier .round-num {
+  border: 1px solid white;
+  background-color: transparent;
+}
+
+.cashier .round-num p {
+  color: white;
+}
+
+.cashier .round-num.selected {
+  background-image: none;
+  background-color: white;
+}
+
+.cashier .round-num.selected p {
+  color: black;
+}
+
+.pendingOrder {
+  background-image: linear-gradient(
+    to right, #453A94 -30%, #F43B47 45%, #453A94 100%);
+}
+
+.checkOutWaiting {
+  padding-bottom: 0;
+  background-image: linear-gradient(
+    to right, #67B26F 0%, #4CA2CD 51%, #67B26F 100%);
+}
+
+.pendingOrder h6, .checkOutWaiting h6 {
+  text-align: center;
+  color: white;
+  font-size: 1.25em;
+  margin-bottom: 1em;
+}
+
+.send-kitchen {
+  position: relative;
+  margin: auto;
+  width: 21.8em;
+  height: 3em;
+  padding-top: 0.15em;
+  padding-bottom: 0.15em;
+  background-color: white;
+  border-radius: 0.5em;
+}
+
+.send-kitchen p {
+  font-size: 1.25em;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%)
+}

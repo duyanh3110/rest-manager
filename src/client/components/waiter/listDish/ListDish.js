@@ -55,8 +55,8 @@ export default class ListDish extends Component {
               </div>
             </div>
             <div className="two-btn">
-              <img src="public/images/button/back.png" alt="logo" onClick={this.handleCloseModal}/>
-              <img src="public/images/button/back.png" alt="logo" />
+              <img src="public/images/button/cancel_round.png" alt="logo" onClick={this.handleCloseModal}/>
+              <img src="public/images/button/accept_round.png" alt="logo" />
             </div>
           </Modal.Body>
         </Modal>

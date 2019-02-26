@@ -1,9 +1,3 @@
-.pika {
-  padding-top: 1em;
-  padding-left: 3.75em;
-  padding-right: 3.75em;
-}
-
 .top-nav {
   display: inline-flex;
   width: 100%;
@@ -158,12 +152,6 @@
 
 @media only screen and (max-width: 375px) {
   /*For Iphone 375x812*/
-  .pika {
-    margin: 0;
-    padding-left: 0.75em;
-    padding-right: 0.75em;
-  }
-
   .main.cate {
     margin-top: 1.5em;
   }
