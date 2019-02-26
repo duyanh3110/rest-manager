@@ -7,16 +7,16 @@ export default class Finalize extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      showFinalModal: false
+      showModal: false
     };
   }
 
-  handleCloseFinalModal = () => {
-    this.setState({ showFinalModal: false });
+  handleCloseModal = () => {
+    this.setState({ showModal: false });
   }
 
-  handleshowFinalModal = () => {
-    this.setState({ showFinalModal: true });
+  handleshowModal = () => {
+    this.setState({ showModal: true });
   }
 
   render() {
@@ -39,14 +39,14 @@ export default class Finalize extends Component {
               <TotalCart />
             </div>
             <div className="formButton">
-              <a className="btn-grad btn-waiter" onClick={this.handleshowFinalModal}>Finalize Order</a>
+              <a className="btn-grad btn-waiter" onClick={this.handleshowModal}>Finalize Order</a>
             </div>
             <p className="back red toscreen">Not Yet</p>
           </div>
         </div>
 
-        <Modal show={this.state.showFinalModal} onHide={this.handleCloseFinalModal}>
-          <Modal.Body onClick={this.handleCloseFinalModal}>
+        <Modal show={this.state.showModal} onHide={this.handleCloseModal}>
+          <Modal.Body onClick={this.handleCloseModal}>
             <p className="title-modal">Order Placed</p>
             <div className="formButton modal-btn">
               <a className="btn-grad btn-waiter">Confirm</a>
