@@ -16,6 +16,7 @@ import Table from './components/waiter/table/Table';
 import Menu from './components/waiter/menu/Menu';
 import Categories from './components/waiter/categories/Categories';
 import Finalize from './components/waiter/finalize/Finalize';
+import Manager from './components/manager/Manager';
 import setAuthToken from './utils/setAuthToken';
 import { logoutUser, setCurrentUser } from './actions/authActions';
 
@@ -73,6 +74,8 @@ export default class App extends Component {
             <Route path="/menu" component={Menu} />
             <Route path="/categories" component={Categories} />
             <Route path="/finalize" component={Finalize} />
+            <Route path="/manager" component={Manager} />
+            <Route path="/table" component={Table} />
           </Switch>
         </Router>
       </Provider>

@@ -7,17 +7,16 @@ import { connect } from 'react-redux';
 import { logoutUser } from '../../actions/authActions';
 
 class Screen extends Component {
-  onLogoutClick(e) {
-    e.preventDefault();
-
-    this.props.logoutUser();
-    this.props.history.push('/');
-  }
-
   componentDidMount() {
     if (!this.props.auth.isAuthenticated) {
       this.props.history.push('/');
     }
+  }
+
+  onLogoutClick(e) {
+    e.preventDefault();
+    this.props.logoutUser();
+    this.props.history.push('/');
   }
 
   render() {
@@ -27,13 +26,19 @@ class Screen extends Component {
           <h5 className="title">Screens</h5>
           <div className="listFeature">
             <div className="waiter tagName">
-              <p>Waiter</p>
+              <Link to="/waiter">
+                <p>Waiter</p>
+              </Link>
             </div>
             <div className="cashier tagName">
-              <p>Cashier</p>
+              <Link to="/cashier">
+                <p>Cashier</p>
+              </Link>
             </div>
             <div className="manager tagName">
-              <p>Manager</p>
+              <Link to="/manager">
+                <p>Manager</p>
+              </Link>
             </div>
           </div>
           <p className="back red" onClick={this.onLogoutClick.bind(this)}>
