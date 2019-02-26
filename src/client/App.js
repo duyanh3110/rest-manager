@@ -12,6 +12,7 @@ import Login from './components/auth/Login';
 import Screen from './components/screen/Screen';
 import Waiter from './components/waiter/Waiter';
 import Menu from './components/waiter/menu/Menu';
+import Categories from './components/waiter/categories/Categories';
 import setAuthToken from './utils/setAuthToken';
 import { logoutUser, setCurrentUser } from './actions/authActions';
 
@@ -66,6 +67,7 @@ export default class App extends Component {
             <Route path="/screen" component={Screen} />
             <Route path="/waiter" component={Waiter} />
             <Route path="/menu" component={Menu} />
+            <Route path="/categories" component={Categories} />
           </Switch>
         </Router>
       </Provider>
