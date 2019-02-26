@@ -12,6 +12,7 @@ const { Client } = require('pg');
 const users = require('./router/api/users');
 const menu = require('./router/api/menu');
 const restaurants = require('./router/api/restaurants');
+const orders = require('./router/api/orders');
 
 const client = new Client({
   // connectionString: process.env.DATABASE_URL,
@@ -81,5 +82,6 @@ app.get('/api/getUsername', (req, res) => res.send({ username: os.userInfo().use
 app.use('/api/users', users);
 app.use('/api/menu', menu);
 app.use('/api/restaurants', restaurants);
+app.use('/api/orders', orders);
 
 app.listen(process.env.PORT || 8080, () => console.log('Listening on port 8080!'));
