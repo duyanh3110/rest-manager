@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import TotalCart from "../cartFromWaiter/CartFromWaiter";
+import ButtonModal from "../modalConfirm/ModalConfirm";
 import '../order/Order.css';
 
 export default class Order extends Component {
@@ -23,9 +24,9 @@ export default class Order extends Component {
               <div className="total-cart">
                 <TotalCart />
               </div>
-              <div className="formButton" style={{width: '100%'}}>
-                <a className="btn-grad btn-waiter">Check Out</a>
-              </div>
+              <ButtonModal
+                titleModal="Checkout"
+                cancelVis={false} />
             </div>
           </div>
         </div>
