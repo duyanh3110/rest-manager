@@ -1,0 +1,28 @@
+[
+    {
+      "id": 1,
+      "name": "Chocolate-Mint Bars",
+      "image": "public/images/dessert/Chocolate-Mint Bars.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Lemon-Scented Blueberry Cupcakes",
+      "image": "public/images/dessert/Lemon-Scented Blueberry Cupcakes.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Nathan’s Lemon Cake",
+      "image": "public/images/dessert/Nathan’s Lemon Cake.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Raspberry-Rhubarb Pie",
+      "image": "public/images/dessert/Raspberry-Rhubarb Pie.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Strawberry-Almond Cream Tart",
+      "image": "public/images/dessert/Strawberry-Almond Cream Tart.jpg"
+    }
+  ]
+  

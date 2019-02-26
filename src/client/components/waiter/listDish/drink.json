@@ -1,0 +1,33 @@
+[
+    {
+      "id": 1,
+      "name": "Blueberry Spinach Smoothie",
+      "image": "public/images/drink/Blueberry Spinach Smoothie.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Happy Digestion Smoothie",
+      "image": "public/images/drink/Happy Digestion Smoothie.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Apple Juice",
+      "image": "public/images/drink/Apple Juice.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Orange Juice",
+      "image": "public/images/drink/Orange Juice.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Matcha Bubble Tea",
+      "image": "public/images/drink/Matcha Bubble Tea.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Coca Cola",
+      "image": "public/images/drink/Coca Cola.jpg"
+    }
+  ]
+  
