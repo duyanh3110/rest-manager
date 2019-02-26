@@ -11,6 +11,7 @@ const passport = require('passport');
 const { Client } = require('pg');
 const users = require('./router/api/users');
 const menu = require('./router/api/menu');
+const table = require('./router/api/table');
 const restaurants = require('./router/api/restaurants');
 
 const client = new Client({
@@ -80,6 +81,7 @@ app.get('/api/getUsername', (req, res) => res.send({ username: os.userInfo().use
 
 app.use('/api/users', users);
 app.use('/api/menu', menu);
+app.use('/api/table', table);
 app.use('/api/restaurants', restaurants);
 
 app.listen(process.env.PORT || 8080, () => console.log('Listening on port 8080!'));
