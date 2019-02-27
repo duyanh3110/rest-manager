@@ -1,3 +1,6 @@
 export const GET_ERRORS = 'GET_ERRORS';
 export const SET_CURRENT_USER = 'SET_CURRENT_USER';
 export const TEST_DISPATCH = 'TEST_DISPATCH';
+export const GET_TABLE_LIST = 'GET_TABLE_LIST';
+export const TABLE_LOADING = 'TABLE_LOADING';
+export const CLEAR_CURRENT_TABLE = 'CLEAR_CURRENT_TABLE';

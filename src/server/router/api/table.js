@@ -8,6 +8,7 @@ const jwt = require('jsonwebtoken');
 const { Client } = require('pg');
 const passport = require('passport');
 const validateTableInput = require('../../validation/table');
+const validateCustomerInput = require('../../validation/addcostumer');
 
 const client = new Client({
   // connectionString: process.env.DATABASE_URL,
@@ -74,7 +75,7 @@ router.get('/showtable', passport.authenticate('jwt', { session: false }), (req,
       if (errors) {
         res.status(404).json(errors);
       } else {
-        res.json(table);
+        res.json(table.rows);
       }
     }
   );
@@ -88,6 +89,34 @@ router.post('/deletetable', passport.authenticate('jwt', { session: false }), (r
       res.json({ success: 'delete success' });
     }
   });
+});
+
+router.post('/addcustomer', passport.authenticate('jwt', { session: false }), (req, res) => {
+  client.query(
+    'UPDATE public.table set customerno = $1 WHERE tableno = $2 and user_id= $3;',
+    [req.body.customerno, req.body.tableno, req.user.user_id],
+    (errors) => {
+      if (errors) {
+        res.status(404).json(errors);
+      } else {
+        res.json({ success: 'add customer success' });
+      }
+    }
+  );
+});
+
+router.post('/cleartable', passport.authenticate('jwt', { session: false }), (req, res) => {
+  client.query(
+    'UPDATE public.table set customerno = null WHERE tableno= $1 and user_id= $2',
+    [req.body.tableno, req.user.user_id],
+    (errors) => {
+      if (errors) {
+        res.status(404).json(errors);
+      } else {
+        res.json({ success: 'clear table success' });
+      }
+    }
+  );
 });
 
 module.exports = router;
