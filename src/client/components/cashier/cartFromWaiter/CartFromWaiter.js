@@ -25,7 +25,7 @@ export default class CartFromWaiter extends Component {
         })}
         <div className="total">
           <p>Order Total</p>
-          <div className="dish-price">&euro;32.00</div>
+          <div className="dish-price">&euro;18.00</div>
         </div>
       </div>
     );

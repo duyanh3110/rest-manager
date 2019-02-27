@@ -9,7 +9,7 @@ export default class TotalCartBar extends Component {
     this.state = {
       showFinalModal: false,
       showCancerModal: false,
-      showCart: true
+      showCart: false
     };
   }
 

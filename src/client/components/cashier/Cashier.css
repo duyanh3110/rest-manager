@@ -31,9 +31,8 @@
 }
 
 .checkOutWaiting {
-  padding-bottom: 0;
   background-image: linear-gradient(
-    to right, #67B26F 0%, #4CA2CD 51%, #67B26F 100%);
+    to right, #67B26F 0%, #4CA2CD 60%, #67B26F 100%);
 }
 
 .pendingOrder h6, .checkOutWaiting h6 {
