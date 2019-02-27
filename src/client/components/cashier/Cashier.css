@@ -1,4 +1,4 @@
-.cashier {
+.cash {
   width: 30.5em;
   padding-top: 1em;
   padding-bottom: 1em;
@@ -7,35 +7,44 @@
   background-size: 200% auto;
 }
 
-.cashier .round-num {
+.cash .round-num {
   border: 1px solid white;
   background-color: transparent;
 }
 
-.cashier .round-num p {
+.cash .round-num p {
   color: white;
 }
 
-.cashier .round-num.selected {
+.cash .round-num.selected {
   background-image: none;
   background-color: white;
 }
 
-.cashier .round-num.selected p {
+.cash .round-num.selected p {
   color: black;
 }
 
 .pendingOrder {
   background-image: linear-gradient(
-    to right, #453A94 -30%, #F43B47 45%, #453A94 100%);
+    to right,
+    #453a94 -30%,
+    #f43b47 45%,
+    #453a94 100%
+  );
 }
 
 .checkOutWaiting {
   background-image: linear-gradient(
-    to right, #67B26F 0%, #4CA2CD 60%, #67B26F 100%);
+    to right,
+    #67b26f 0%,
+    #4ca2cd 51%,
+    #67b26f 100%
+  );
 }
 
-.pendingOrder h6, .checkOutWaiting h6 {
+.pendingOrder h6,
+.checkOutWaiting h6 {
   text-align: center;
   color: white;
   font-size: 1.25em;
@@ -60,5 +69,5 @@
   top: 50%;
   left: 50%;
   margin-right: -50%;
-  transform: translate(-50%, -50%)
+  transform: translate(-50%, -50%);
 }

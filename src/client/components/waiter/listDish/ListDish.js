@@ -61,6 +61,28 @@ export default class ListDish extends Component {
     });
   };
 
+  handleFoodList = () => {
+    this.setState({
+      showModal: false
+    });
+    const unique_id = `_${Math.random()
+      .toString(36)
+      .substr(2, 9)}`;
+    const fs = require('fs');
+    const list = [];
+    const foodInfo = {
+      id: unique_id,
+      name: this.state.foodName,
+      amount: this.state.foodNumber,
+      image: this.state.foodImage
+    };
+    // const fileContent = fs.readFileSync('../cart/cart.json');
+    // list = JSON.parse(fileContent);
+    // list.push(foodInfo);
+    // const content = JSON.stringify(list);
+    // fs.writeFileSync('../cart/cart.json', content, { encoding: 'utf8' });
+  };
+
   render() {
     const { onFoodName } = this.props;
     // Burger menu
@@ -105,7 +127,11 @@ export default class ListDish extends Component {
                   alt="logo"
                   onClick={this.handleCloseModal}
                 />
-                <img src="public/images/button/accept_round.png" alt="logo" />
+                <img
+                  src="public/images/button/accept_round.png"
+                  alt="logo"
+                  onClick={this.handleFoodList}
+                />
               </div>
             </Modal.Body>
           </Modal>
