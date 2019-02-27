@@ -1,0 +1,39 @@
+.list-menu {
+  padding-left: 2em;
+  padding-right: 2em;
+}
+
+.formButton.edit .cate {
+  background-image: linear-gradient(
+    to right, #F43B47 0%, #453A94 55%, #F43B47 100%);
+}
+
+.edit-info.cate .edit-icon {
+  width: 2.5em;
+  right: 5%;
+  bottom: -5%;
+}
+
+.edit-info.cate .edit-img {
+  width: 10.5em;
+  border-radius: 0;
+}
+
+.edit-info.cate .edit-input .price {
+  width: 6em;
+}
+
+@media only screen and (max-width: 375px) {
+  /*For Iphone 375x812*/
+  .edit-info.cate .edit-icon {
+    width: 1.5em;
+    right: 5%;
+    bottom: -5%;
+  }
+
+  .edit-info.cate .edit-img {
+    width: 5em;
+    height: auto;
+    border-radius: 0;
+  }
+}

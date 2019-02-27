@@ -2,51 +2,71 @@
   {
     "id": 1,
     "name": "All-American",
+    "amount": 0,
+    "price": 5,
     "image": "public/images/burger/All-American.jpg"
   },
   {
     "id": 2,
     "name": "Bacon Burger",
+    "amount": 0,
+    "price": 3,
     "image": "public/images/burger/Bacon Burgers.jpg"
   },
   {
     "id": 3,
     "name": "Beef Burger",
+    "amount": 0,
+    "price": 6,
     "image": "public/images/burger/Beef Burgers.jpg"
   },
   {
     "id": 4,
     "name": "Cheddar BLT",
+    "amount": 0,
+    "price": 2,
     "image": "public/images/burger/Cheddar BLT Burgers.jpg"
   },
   {
     "id": 5,
-    "name": "Cheddar-and-Onion",
+    "name": "Cheddar-Onion",
+    "amount": 0,
+    "price": 7,
     "image": "public/images/burger/Cheddar-and-Onion.jpg"
   },
   {
     "id": 6,
     "name": "Chile Stuffed",
+    "amount": 0,
+    "price": 8,
     "image": "public/images/burger/Chile-Stuffed.jpg"
   },
   {
     "id": 7,
     "name": "Green-Chile",
+    "amount": 0,
+    "price": 3,
     "image": "public/images/burger/Green-Chile.jpg"
   },
   {
     "id": 8,
     "name": "Minetta",
+    "amount": 0,
+    "price": 1,
     "image": "public/images/burger/Minetta.jpg"
   },
   {
     "id": 9,
     "name": "Pug Burger",
+    "amount": 0,
+    "price": 6,
     "image": "public/images/burger/Pug Burger.jpg"
   },
   {
     "id": 10,
     "name": "Umami Burger",
+    "amount": 0,
+    "price": 9,
     "image": "public/images/burger/Umami Burgers.jpg"
   }
 ]

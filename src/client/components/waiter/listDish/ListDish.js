@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Modal, Button } from 'react-bootstrap';
-import Dishes from './dishes.json';
-import Pizzas from './pizza.json';
-import Drinks from './drink.json';
-import Desserts from './dessert.json';
+import Dishes from '../../../data/burger.json';
+import Pizzas from '../../../data/pizza.json';
+import Drinks from '../../../data/drink.json';
+import Desserts from '../../../data/dessert.json';
 import './ListDish.css';
 
 export default class ListDish extends Component {
@@ -127,8 +127,8 @@ export default class ListDish extends Component {
           <Modal show={this.state.showModal} onHide={this.handleCloseModal}>
             <Modal.Body>
               <div className="dish-detail">
-                <img src={this.state.dishInfo.image} alt="logo" />
-                <p className="name">{this.state.dishInfo.name}</p>
+                <img src={this.state.foodImage} alt="logo" />
+                <p className="name">{this.state.foodName}</p>
               </div>
               <div className="top-num top-nav table">
                 <div className="tagNum">
@@ -172,8 +172,8 @@ export default class ListDish extends Component {
           <Modal show={this.state.showModal} onHide={this.handleCloseModal}>
             <Modal.Body>
               <div className="dish-detail">
-                <img src={this.state.dishInfo.image} alt="logo" />
-                <p className="name">{this.state.dishInfo.name}</p>
+                <img src={this.state.foodImage} alt="logo" />
+                <p className="name">{this.state.foodName}</p>
               </div>
               <div className="top-num top-nav table">
                 <div className="tagNum">
@@ -217,8 +217,8 @@ export default class ListDish extends Component {
           <Modal show={this.state.showModal} onHide={this.handleCloseModal}>
             <Modal.Body>
               <div className="dish-detail">
-                <img src={this.state.dishInfo.image} alt="logo" />
-                <p className="name">{this.state.dishInfo.name}</p>
+                <img src={this.state.foodImage} alt="logo" />
+                <p className="name">{this.state.foodName}</p>
               </div>
               <div className="top-num top-nav table">
                 <div className="tagNum">

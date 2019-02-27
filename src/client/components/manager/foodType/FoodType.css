@@ -1,0 +1,231 @@
+.foodType {
+  position: relative;
+  width: 100%;
+  margin-bottom: 1.75em;
+  transition: all 300ms ease;
+}
+
+.foodType .banner {
+  position: relative;
+  height: 4.75em;
+  background-color: red;
+  border-radius: 0.75em;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.foodType .banner img.arrow {
+  margin: 0;
+  margin-right: 2em;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform-origin: 0% 0%;
+  transform: translate(0, -50%);
+  transition: all 300ms ease-out;
+}
+
+.foodType .banner p {
+  font-size: 1.5em;
+  color: white;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%)
+}
+
+.foodType .banner img.edit {
+  margin: 0;
+  margin-left: 2em;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  transition: all 300ms ease-out;
+}
+
+.foodType.burger .banner {
+  background-image: url(/public/images/menu/burger.png);
+}
+
+.foodType.pizza .banner {
+  background-image: url(/public/images/menu/pizza.png);
+}
+
+.foodType.drink .banner {
+  background-image: url(/public/images/menu/drink.png);
+}
+
+.foodType.dessert .banner {
+  background-image: url(/public/images/menu/dessert.png);
+}
+
+.foodType .list-food {
+  position: relative;
+  padding: 0em 1em;
+  max-height: 22.5em;
+  overflow-y: scroll;
+  transform-origin: 0% 0%;
+  transition: all 300ms ease-out;
+}
+
+.foodType.hide .list-food {
+  height: 0;
+  opacity: 0;
+  margin: 0;
+  transform: rotateX(-90deg);
+}
+
+.foodType.show .list-food {
+  height: 100%;
+  opacity: 1;
+  margin: 1.5em 0em;
+  transform: rotateX(0deg);
+}
+
+.foodType.hide img.edit {
+  opacity: 0;
+}
+
+.foodType.show img.edit {
+  opacity: 1;
+}
+
+.foodType.show img.arrow {
+  -webkit-transform: rotate(90deg); /* Safari 3-8 */
+  transform: rotate(90deg);
+}
+
+.formButton.edit {
+  width: 100%;
+  font-size: 1.25em;
+  margin-bottom: 0;
+}
+
+.formButton.edit .btn-grad {
+  background-image: linear-gradient(
+    to right, #243949 0%, #517FA4 55%, #243949 100%);
+}
+
+/*Modal Edit*/
+.edit-info {
+  display: flex;
+  position: relative;
+  align-items: center;
+  width: 100%;
+  margin-top: 3em;
+}
+
+.image-left {
+  position: relative;
+}
+
+.edit-icon {
+  position: absolute;
+  width: 2em;
+  height: auto;
+  margin: 0;
+  bottom: 0;
+  right: 15%;
+}
+
+.edit-img {
+  display: inline-block;
+  width: 7.5em;
+  height: auto;
+  border-radius: 50%;
+  margin: 0;
+  position: relative;
+  margin-right: 1.5em;
+}
+
+.edit-input input {
+  background: transparent;
+  width: 100%;
+  font-size: 2em;
+  padding-left: 0.5em;
+  padding-bottom: 0.25em;
+  padding-top: 1em;
+  border: none;
+  border-bottom: 1px solid gray;
+}
+
+.edit-input .name {
+  width: 100%;
+}
+
+.edit-input .price {
+  width: 3em;
+}
+
+.two-btn.edit {
+  padding: 0;
+  justify-content: space-between;
+  margin-top: 3.5em;
+}
+
+.two-btn.edit button {
+  width: 10em;
+  height: 3em;
+  border-radius: 0.75em;
+  border: none;
+  outline: none;
+  font-size: 1.75em;
+  font-weight: 500;
+  color: white;
+  background-size: 200% auto;
+}
+
+.two-btn.edit button.del {
+  margin-right: 0.5em;
+  background-image: linear-gradient(
+    to right, #FF0844 0%, #FFB199 61%, #FF0844 100%);
+}
+
+.two-btn.edit button.save {
+  background-image: linear-gradient(
+    to right, #30CFD0 0%, #A6C1EE 65%, #30CFD0 100%);
+}
+
+@media only screen and (max-width: 375px) {
+  /*For Iphone 375x812*/
+  .edit-info {
+    margin-top: 2em;
+  }
+
+  .edit-img {
+    width: 5.5em;
+    height: 5.5em;
+    margin-right: 1em;
+  }
+
+  .edit-icon {
+    width: 1.5em;
+  }
+
+  .edit-input input {
+    font-size: 1.25em;
+    padding-left: 0.5em;
+    padding-bottom: 0.25em;
+    padding-top: 1em;
+  }
+
+  .two-btn.edit {
+    margin-top: 2.5em;
+  }
+
+  .two-btn.edit button {
+    width: 6em;
+    height: 2.5em;
+    font-size: 1.5em;
+  }
+
+  .two-btn.edit button.del {
+    margin-right: 0.25em;
+  }
+
+}

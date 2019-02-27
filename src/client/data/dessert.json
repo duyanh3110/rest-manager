@@ -2,27 +2,36 @@
     {
       "id": 1,
       "name": "Chocolate-Mint Bars",
+      "amount": 0,
+      "price": 5,
       "image": "public/images/dessert/Chocolate-Mint Bars.jpg"
     },
     {
       "id": 2,
       "name": "Lemon-Scented Blueberry Cupcakes",
+      "amount": 0,
+      "price": 4,
       "image": "public/images/dessert/Lemon-Scented Blueberry Cupcakes.jpg"
     },
     {
       "id": 3,
       "name": "Nathan’s Lemon Cake",
+      "amount": 0,
+      "price": 2,
       "image": "public/images/dessert/Nathan’s Lemon Cake.jpg"
     },
     {
       "id": 4,
       "name": "Raspberry-Rhubarb Pie",
+      "amount": 0,
+      "price": 6,
       "image": "public/images/dessert/Raspberry-Rhubarb Pie.jpg"
     },
     {
       "id": 5,
       "name": "Strawberry-Almond Cream Tart",
+      "amount": 0,
+      "price": 5,
       "image": "public/images/dessert/Strawberry-Almond Cream Tart.jpg"
     }
   ]
-  
