@@ -20,6 +20,7 @@ import Cashier from './components/cashier/Cashier';
 import Order from './components/cashier/order/Order';
 import Checkout from './components/cashier/checkout/Checkout';
 import Manager from './components/manager/Manager';
+import Cart from './components/waiter/cart/Cart';
 import setAuthToken from './utils/setAuthToken';
 import { logoutUser, setCurrentUser } from './actions/authActions';
 
@@ -82,6 +83,7 @@ export default class App extends Component {
             <Route path="/checkout" component={Checkout} />
             <Route path="/manager" component={Manager} />
             <Route path="/table" component={Table} />
+            <Route path="/cart" component={Cart} />
           </Switch>
         </Router>
       </Provider>
