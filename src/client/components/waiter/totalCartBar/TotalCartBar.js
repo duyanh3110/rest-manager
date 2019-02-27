@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Modal, Button } from 'react-bootstrap';
+import TotalCart from "../cart/Cart";
 import './TotalCartBar.css';
 
 export default class TotalCartBar extends Component {
@@ -7,7 +8,8 @@ export default class TotalCartBar extends Component {
     super(props);
     this.state = {
       showFinalModal: false,
-      showCancerModal: false
+      showCancerModal: false,
+      showCart: true
     };
   }
 
@@ -27,13 +29,21 @@ export default class TotalCartBar extends Component {
     this.setState({ showCancerModal: true });
   }
 
+  handleCloseCartModal = () => {
+    this.setState({ showCart: false });
+  }
+
+  handleshowCartModal = () => {
+    this.setState({ showCart: true });
+  }
+
   render() {
     return (
       <div>
         <div className="formButton recipe">
           <div className="btn-grad btn-recipe">
             <img src="public/images/button/cancel.png" alt="logo" onClick={this.handleshowCancerModal}/>
-            <p>3 Dishes</p>
+            <p onClick={this.handleshowCartModal}>3 Dishes</p>
             <img src="public/images/button/accept.png" alt="logo" onClick={this.handleshowFinalModal}/>
           </div>
         </div>
@@ -55,6 +65,24 @@ export default class TotalCartBar extends Component {
             </div>
             <div className="formButton modal-btn">
               <a className="btn-grad btn-continue">Continue Order</a>
+            </div>
+          </Modal.Body>
+        </Modal>
+
+        <Modal dialogClassName="cartTemp" show={this.state.showCart} onHide={this.handleCloseCartModal}>
+          <Modal.Body>
+            <div className="top-num top-nav">
+              <div className="tagNum">
+                <p className="name-num">Table</p>
+                <div className="round-num"><p>12</p></div>
+              </div>
+              <div className="tagNum">
+                <p className="name-num">Customers</p>
+                <div className="round-num"><p>4</p></div>
+              </div>
+            </div>
+            <div className="total-cart">
+              <TotalCart />
             </div>
           </Modal.Body>
         </Modal>

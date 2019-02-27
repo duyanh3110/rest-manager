@@ -12,3 +12,20 @@
   background-image: linear-gradient(
     to right, #A6C1EE 0%, #30CFD0 51%, #A6C1EE 100%);
 }
+
+.modal-dialog.cartTemp {
+  margin: 0;
+  top: auto;
+  left: 0;
+  bottom: 0;
+  transform: none !important;
+}
+
+.modal-dialog.cartTemp .modal-content {
+  border-radius: 0;
+}
+
+.modal-dialog.cartTemp .top-num {
+  width: 100%;
+  margin-top: 1em;
+}

@@ -4,6 +4,10 @@
   margin-top: 1.5em;
 }
 
+.list-dish.cart p {
+  margin: 0;
+}
+
 .dish-name {
   display: inline-block;
 }
