@@ -8,11 +8,11 @@ export default class Manager extends Component {
       <div className="container">
         <div className="main">
           <h5 className="title">Manager</h5>
-          <div className="pendingOrder cashier">
+          <div className="pendingOrder cash">
             <h6>Today Income</h6>
             <p className="income">&euro; 1246.00</p>
           </div>
-          <div className="checkOutWaiting cashier">
+          <div className="checkOutWaiting cash">
             <h6>Monthly Income</h6>
             <p className="income">&euro; 32 587.08</p>
           </div>

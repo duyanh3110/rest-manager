@@ -68,7 +68,7 @@ export default class ListDish extends Component {
     const unique_id = `_${Math.random()
       .toString(36)
       .substr(2, 9)}`;
-    const fs = require('fs');
+    // const fs = require('fs');
     const list = [];
     const foodInfo = {
       id: unique_id,
