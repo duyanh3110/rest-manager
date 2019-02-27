@@ -11,21 +11,53 @@ export default class ListDish extends Component {
     super(props);
     this.state = {
       showModal: false,
-      dishInfo: ''
+      foodName: '',
+      foodImage: '',
+      foodNumber: 0
     };
   }
 
   handleCloseModal = () => {
     this.setState({
       showModal: false,
-      dishInfo: ''
+      dishInfo: '',
+      foodName: '',
+      foodImage: '',
+      foodNumber: 0
     });
   };
 
   handleShowModal = (foodDetail) => {
     this.setState({
       showModal: true,
-      dishInfo: foodDetail
+      foodName: foodDetail.name,
+      foodImage: foodDetail.image
+    });
+  };
+
+  updateInputValue = (evt) => {
+    let numberValue;
+    if (evt.target.type === 'number') numberValue = parseInt(evt.target.value);
+    this.setState({
+      foodNumber: numberValue
+    });
+  };
+
+  subQuantity = () => {
+    if (this.state.foodNumber > 0) {
+      let newNumber = this.state.foodNumber;
+      newNumber--;
+      this.setState({
+        foodNumber: newNumber
+      });
+    }
+  };
+
+  addQuantity = () => {
+    let newNumber = this.state.foodNumber;
+    newNumber++;
+    this.setState({
+      foodNumber: newNumber
     });
   };
 
@@ -46,19 +78,23 @@ export default class ListDish extends Component {
           <Modal show={this.state.showModal} onHide={this.handleCloseModal}>
             <Modal.Body>
               <div className="dish-detail">
-                <img src={this.state.dishInfo.image} alt="logo" />
-                <p className="name">{this.state.dishInfo.name}</p>
+                <img src={this.state.foodImage} alt="logo" />
+                <p className="name">{this.state.foodName}</p>
               </div>
               <div className="top-num top-nav table">
                 <div className="tagNum">
                   <p className="name-num">Customers</p>
                 </div>
                 <div className="tagNum">
-                  <div className="round-num">
+                  <div className="round-num" onClick={this.subQuantity}>
                     <p>-</p>
                   </div>
-                  <input type="number" placeholder="2" />
-                  <div className="round-num">
+                  <input
+                    type="number"
+                    value={this.state.foodNumber}
+                    onChange={this.updateInputValue}
+                  />
+                  <div className="round-num" onClick={this.addQuantity}>
                     <p>+</p>
                   </div>
                 </div>
