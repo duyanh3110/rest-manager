@@ -82,4 +82,14 @@ router.post('/delete', passport.authenticate('jwt', { session: false }), (req, r
   });
 });
 
+router.get('/showmenu', passport.authenticate('jwt', { session: false }), (req, res) => {
+  client.query('SELECT * FROM public.menu WHERE user_id = $1',[req.user.user_id],(errors, food) =>{
+    if (errors) {
+      res.status(404).json(errors);
+    } else {
+      res.json(food.rows);
+    }
+  })
+})
+
 module.exports = router;

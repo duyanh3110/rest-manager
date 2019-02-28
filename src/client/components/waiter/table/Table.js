@@ -39,14 +39,14 @@ class Table extends Component {
     e.preventDefault();
   }
 
-  addcustomer = () =>{
+  addcustomer = () => {
     const tableData = {
       tableno: this.state.table,
       customerno: this.state.people
-    }
+    };
 
-    this.props.addcustomer(tableData, this.props.history);
-  }
+    this.props.addcustomer(tableData);
+  };
 
   componentDidMount() {
     this.props.getCurrentTable();

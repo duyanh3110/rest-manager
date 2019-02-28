@@ -23,12 +23,12 @@ export const setTableLoading = () => ({
 });
 
 // Clear Table
-export const clearCurrentFood = () => ({
+export const clearCurrentTable = () => ({
   type: CLEAR_CURRENT_TABLE
 });
 
 // add customer
-export const addcustomer = (tableData,history) => (dispatch) => {
+export const addcustomer = (tableData, history) => (dispatch) => {
   axios
     .post('/api/table/addcustomer', tableData)
     .then((res) => {

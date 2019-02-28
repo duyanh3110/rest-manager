@@ -36,7 +36,7 @@ class Screen extends Component {
               </Link>
             </div>
             <div className="manager tagName">
-              <Link to="/manager">
+              <Link to="/managerlogin">
                 <p>Manager</p>
               </Link>
             </div>

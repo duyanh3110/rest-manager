@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
-import FoodType from "../foodType/FoodType";
+import { Modal, Button } from 'react-bootstrap';
+import FoodType from '../foodType/FoodType';
 import Burger from '../../../data/burger.json';
 import Pizza from '../../../data/pizza.json';
 import Drink from '../../../data/drink.json';
+import { getCurrentMenu } from '../../../actions/menuActions';
 import Dessert from '../../../data/dessert.json';
-import { Modal, Button } from 'react-bootstrap';
 import './Setting.css';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-export default class Setting extends Component {
+class Setting extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -16,15 +18,19 @@ export default class Setting extends Component {
     };
   }
 
+  componentDidMount() {
+    this.props.getCurrentMenu();
+  }
+
   handleCloseModalAddCate = () => {
     this.setState({
-      showModalAddCate: false,
+      showModalAddCate: false
     });
   };
 
   handleShowModalAddCate = () => {
     this.setState({
-      showModalAddCate: true,
+      showModalAddCate: true
     });
   };
 
@@ -38,21 +44,31 @@ export default class Setting extends Component {
               <FoodType
                 typeOfFood="burger"
                 titleFood="Burger"
-                food={Burger}/>
+                food={Burger}
+                history={this.props.history}
+              />
               <FoodType
                 typeOfFood="pizza"
                 titleFood="Pizza"
-                food={Pizza}/>
+                food={Pizza}
+                history={this.props.history}
+              />
               <FoodType
                 typeOfFood="drink"
                 titleFood="Drink"
-                food={Drink}/>
+                food={Drink}
+                history={this.props.history}
+              />
               <FoodType
                 typeOfFood="dessert"
                 titleFood="Desert"
-                food={Dessert}/>
+                food={Dessert}
+                history={this.props.history}
+              />
               <div className="formButton edit">
-                <a className="btn-grad cate" onClick={this.handleShowModalAddCate}>New Categories</a>
+                <a className="btn-grad cate" onClick={this.handleShowModalAddCate}>
+                  New Categories
+                </a>
               </div>
             </div>
           </div>
@@ -62,17 +78,21 @@ export default class Setting extends Component {
           <Modal.Body>
             <div className="edit-info cate">
               <div className="image-left">
-                <img className="edit-img" src="/public/images/button/dessert.png"/>
-                <img className="edit-icon" src='/public/images/button/edit_icon.png'/>
+                <img className="edit-img" src="/public/images/button/dessert.png" />
+                <img className="edit-icon" src="/public/images/button/edit_icon.png" />
               </div>
               <div className="edit-input">
-                <input className="name" type="text" placeholder="New Categories"/>
-                <input className="price" type="number" placeholder="Amount"/>
+                <input className="name" type="text" placeholder="New Categories" />
+                <input className="price" type="number" placeholder="Amount" />
               </div>
             </div>
             <div className="two-btn edit">
-              <button className="btn-edit del" onClick={this.handleCloseModalAddCate}>Cancel</button>
-              <button className="btn-edit save" onClick={this.handleCloseModalAddCate}>Save</button>
+              <button className="btn-edit del" onClick={this.handleCloseModalAddCate}>
+                Cancel
+              </button>
+              <button className="btn-edit save" onClick={this.handleCloseModalAddCate}>
+                Save
+              </button>
             </div>
           </Modal.Body>
         </Modal>
@@ -80,3 +100,12 @@ export default class Setting extends Component {
     );
   }
 }
+
+const mapStateToProps = state => ({
+  menu: state.menu
+});
+
+export default connect(
+  mapStateToProps,
+  { getCurrentMenu }
+)(Setting);
