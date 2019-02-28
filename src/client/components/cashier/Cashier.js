@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Cashier.css';
+import { Link } from 'react-router-dom';
 
 export default class Cashier extends Component {
   render() {
@@ -82,7 +83,9 @@ export default class Cashier extends Component {
               </div>
             </div>
             <div style={{ width: '30.5em' }}>
-              <p className="back blue toscreen">Show Screen</p>
+              <Link to="/screen">
+                <p className="back blue toscreen">Show Screen</p>
+              </Link>
             </div>
           </div>
         </div>

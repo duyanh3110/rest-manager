@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Modal, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import ListDish from '../listDish/ListDish';
 import SideBar from '../sideBar/SideBar';
 import TotalCartBar from '../totalCartBar/TotalCartBar';
@@ -63,7 +64,9 @@ export default class Categories extends Component {
         <div className="pika">
           <div className="top-nav">
             <div className="btn-back">
-              <img src="public/images/button/back.png" alt="logo" />
+              <Link to="/table">
+                <img src="public/images/button/back.png" alt="logo" />
+              </Link>
             </div>
             <div className="btn-nav">
               <img src="public/images/button/nav_round.png" alt="logo" onClick={this.toggleNav} />
