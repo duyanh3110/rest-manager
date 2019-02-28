@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Modal, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import './ModalConfirm.css';
 
 export default class TotalCartBar extends Component {
@@ -14,37 +15,47 @@ export default class TotalCartBar extends Component {
 
   handleCloseKitchenModal = () => {
     this.setState({ showKitchenModal: false });
-  }
+  };
 
   handleshowKitchenModal = () => {
     this.setState({ showKitchenModal: true });
-  }
+  };
 
   handleCloseCancerModal = () => {
     this.setState({ showCancerModal: false });
-  }
+  };
 
   handleshowCancerModal = () => {
     this.setState({ showCancerModal: true });
-  }
+  };
 
   render() {
     return (
       <div>
-        <div className="formButton" style={{width: '100%'}}>
-          <a className="btn-grad btn-waiter" onClick={this.handleshowKitchenModal}>{this.props.titleModal}</a>
+        <div className="formButton" style={{ width: '100%' }}>
+          <a className="btn-grad btn-waiter" onClick={this.handleshowKitchenModal}>
+            {this.props.titleModal}
+          </a>
         </div>
-        {this.state.cancelOrNot ?
-        <p className="back red toscreen" onClick={this.handleshowCancerModal}>Delete Order</p> :
-        <div></div>}
+        {this.state.cancelOrNot ? (
+          <p className="back red toscreen" onClick={this.handleshowCancerModal}>
+            Delete Order
+          </p>
+        ) : (
+          <div />
+        )}
 
         <Modal show={this.state.showKitchenModal} onHide={this.handleCloseKitchenModal}>
           <Modal.Body>
             <p className="title-modal">{this.props.titleModal}</p>
             <div className="formButton modal-btn">
-              <a className="btn-grad btn-waiter">Confirm</a>
+              <Link to="/cashier">
+                <a className="btn-grad btn-waiter">Confirm</a>
+              </Link>
             </div>
-            <p className="back blue toscreen" onClick={this.handleCloseKitchenModal}>Not yet</p>
+            <p className="back blue toscreen" onClick={this.handleCloseKitchenModal}>
+              Not yet
+            </p>
           </Modal.Body>
         </Modal>
 
