@@ -5,15 +5,18 @@ import Pizzas from '../../../data/pizza.json';
 import Drinks from '../../../data/drink.json';
 import Desserts from '../../../data/dessert.json';
 import './ListDish.css';
+import { connect } from 'react-redux';
+import { getCurrentMenu, addfood } from '../../../actions/menuActions';
 
-export default class ListDish extends Component {
+class ListDish extends Component {
   constructor(props) {
     super(props);
     this.state = {
       showModal: false,
       foodName: '',
       foodImage: '',
-      foodNumber: 0
+      foodNumber: 0,
+      listOrder: []
     };
   }
 
@@ -69,13 +72,17 @@ export default class ListDish extends Component {
       .toString(36)
       .substr(2, 9)}`;
     // const fs = require('fs');
-    const list = [];
+    let list;
+    list = this.state.listOrder;
     const foodInfo = {
-      id: unique_id,
-      name: this.state.foodName,
-      amount: this.state.foodNumber,
-      image: this.state.foodImage
+      food_order: this.state.foodName,
+      quantity: this.state.foodNumber,
+      price: this.state.foodImage
     };
+
+    list.push(foodInfo);
+    this.setState({ listOrder: list });
+
     // const fileContent = fs.readFileSync('../cart/cart.json');
     // list = JSON.parse(fileContent);
     // list.push(foodInfo);
@@ -275,3 +282,12 @@ export default class ListDish extends Component {
     }
   }
 }
+
+const mapStateToProps = state => ({
+  menu: state.menu
+});
+
+export default connect(
+  mapStateToProps,
+  { getCurrentMenu, addfood }
+)(ListDish);

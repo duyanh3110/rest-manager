@@ -44,8 +44,8 @@ router.post('/add', passport.authenticate('jwt', { session: false }), (req, res)
   const tableID = uniqueString();
 
   client.query(
-    'SELECT * FROM public.table WHERE tableno = $1',
-    [req.body.tableno],
+    'SELECT * FROM public.table WHERE tableno = $1 AND user_id =$2',
+    [req.body.tableno,req.user.user_id],
     (errors, table) => {
       if (errors) {
         res.status(404).json(errors);
