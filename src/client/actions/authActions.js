@@ -4,15 +4,15 @@ import { GET_ERRORS, SET_CURRENT_USER, TEST_DISPATCH } from './types';
 import setAuthToken from '../utils/setAuthToken';
 
 // Register User
-// export const registerUser = (userData, history) => (dispatch) => {
-//   axios
-//     .post('/api/users/register', userData)
-//     .then(res => history.push('/screen'))
-//     .catch(err => dispatch({
-//       type: GET_ERRORS,
-//       payload: err.response.data
-//     }));
-// };
+export const registerUser = (userData, history) => (dispatch) => {
+  axios
+    .post('/api/users/register', userData)
+    .then(res => history.push('/screen'))
+    .catch(err => dispatch({
+      type: GET_ERRORS,
+      payload: err.response.data
+    }));
+};
 
 // export const loginUser = userData => ({
 //   type: TEST_DISPATCH,
